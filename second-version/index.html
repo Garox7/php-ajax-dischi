@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js" defer></script>
+	<script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../assets/img/logo.png" alt="">
+    </header>
+
+    <main id="app">
+        <div class="card-container"
+            v-for="disc in discs" :key="disc.title"
+        >
+            <div class="cover" :style="{backgroundImage: `url(${disc.poster})`}">
+            </div>
+            <h2>{{ disc.title }}</h2>
+            <p>{{ disc.author }}</p>
+            <p>{{ disc.year }}</p>
+            <p>{{ disc.genre }}</p>
+            
+        </div>
+    </main>
+
+</body>
+</html>
