@@ -11,23 +11,32 @@
 	<script src="javascript/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <img src="../assets/img/logo.png" alt="">
-    </header>
-
-    <main id="app">
-        <div class="card-container"
-            v-for="disc in discs" :key="disc.title"
-        >
-            <div class="cover" :style="{backgroundImage: `url(${disc.poster})`}">
+    <div id="app">
+        <header>
+            <img src="../assets/img/logo.png" alt="">
+            <div class="filter">
+                <select @change="getList" v-model="genre" name="genre">
+                    <option value="all">All</option>
+                    <option v-for="genre in arr_genres" :key="genre" :value="genre">
+                        {{ genre }}
+                    </option>
+                </select>
             </div>
-            <h2>{{ disc.title }}</h2>
-            <p>{{ disc.author }}</p>
-            <p>{{ disc.year }}</p>
-            <p>{{ disc.genre }}</p>
-            
-        </div>
-    </main>
-
+        </header>
+    
+        <main>
+            <div class="card-container"
+                v-for="disc in arr_discs" :key="disc.title"
+            >
+                <div class="cover"
+                    :style="{backgroundImage: `url(${disc.poster})`}">
+                </div>
+                <h2>{{ disc.title }}</h2>
+                <p>{{ disc.author }}</p>
+                <p>{{ disc.year }}</p>
+                <p>{{ disc.genre }}</p>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
