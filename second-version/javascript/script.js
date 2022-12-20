@@ -10,7 +10,7 @@ new Vue({
     created() {
         axios.get(this.urlDiscs)
             .then(axiosResponse => this.arr_discs = axiosResponse.data);
-            
+
         axios.get(this.urlGenres)
             .then(axiosResponse => this.arr_genres = axiosResponse.data);
     },
@@ -21,9 +21,7 @@ new Vue({
                     genre: this.genre,
                 }
             })
-                .then(axiosResponse => {
-                    this.arr_discs = axiosResponse.data
-                });
+                .then(axiosResponse => this.arr_discs = axiosResponse.data);
         }
     }
 })
