@@ -39,12 +39,16 @@ header {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 header img {
     max-width: 45px;
     margin: 0 10px;
+}
+
+header .filter {
+    padding: 0 20px;
 }
 
 /* MAIN */
